@@ -70,6 +70,7 @@ begin
   if not IsRunning then begin // Wenn IsRunning auf False ist
     try
       sPath := ExtractFileName(Application.Exename);
+      loadPort;
       ShellExecute(Application.Handle,'open','nginx.exe',''{Parameter},'sPath',SW_HIDE);
       begin
         if IsExeRunning('nginx.exe') then begin
